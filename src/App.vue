@@ -1,46 +1,6 @@
-<template>
-<router-view />
-</template>
+<script setup>
 
-<script>
-export default {
-    name: 'App',
-    
-}
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-body{
-  padding: 0;
-  margin: 0;
-}
-.logo{
-    width: 200px
-}
-.register input, .login input , .add input{
-    width: 300px;
-    height: 40px;
-    padding-left: 20px;
-    display: block;
-    margin-bottom: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    border: 1px solid #ED7D31;
-}
-.register button, .login button, .add button{
-    width: 320px;
-    height: 40px;
-    border: 1px solid #ed31d1;
-    background: #ed31d1;
-    color : #4F4A45 ;
-    cursor: pointer;
-    border-radius: 30px;
-}
-</style>
+<template>
+    <router-view />
+</template>

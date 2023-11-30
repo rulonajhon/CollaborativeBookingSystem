@@ -4,7 +4,7 @@
 
 <template>
     <div class="img-box">
-        <img class="logo" src="./assets/uiclogo.png" />
+        <img class="logo" src="../assets/uiclogo.png">
     </div>
      <div class="contact-form">
                     <form class="form">
@@ -15,10 +15,7 @@
         <input type="password" v-model="password" placeholder="Password" />
         <button v-on:click="login">Login</button>
       <ul>
-        <router-link to="/landing"><button>
-            Sign up
-        </button></router-link>
-        
+        <li><a href="#">Sign Up</a></li>
       </ul>
     </div>
     </form>
@@ -27,10 +24,9 @@
 
     
 </template>
+
 <script>
-export default {
- 
-};
+
 </script>
 
 <style scoped>
@@ -72,7 +68,7 @@ body{
   
 }
 
-.login ul router-link{
+.login ul li a {
   text-decoration: none;
   color: rgba(233, 112, 130, 0.9);
   position: relative;
@@ -80,7 +76,7 @@ body{
   transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; 
 }
 
-.login ul router-link::before {
+.login ul li a::before {
   content: "";
   position: absolute;
   width: 0;
@@ -93,13 +89,13 @@ body{
   transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
-.login ul router-link:hover {
+.login ul li a:hover {
   color: rgba(233, 112, 130, 1);
   transform: scale(1.1); 
   font-weight: bold; 
 }
 
-.login ul router-link:hover::before {
+.login ul li a:hover::before {
   width: 100%;
   transform: translateX(-50%) scaleX(1);
 }
