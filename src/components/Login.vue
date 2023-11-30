@@ -4,7 +4,7 @@
 
 <template>
     <div class="img-box">
-        <img class="logo" src="./assets/uiclogo.png" />
+        <img class="logo" src="../assets/uiclogo.png" />
     </div>
      <div class="contact-form">
                     <form class="form">
