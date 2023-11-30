@@ -11,11 +11,12 @@
     
    
     <div class="login">
-        <input type="text" v-model="email" placeholder="Student ID or UIC Email" />
+        <input type="text" v-model="email" placeholder="Student ID" />
+        <input type="text" v-model="email" placeholder="UIC Email" />
         <input type="password" v-model="password" placeholder="Password" />
         <button v-on:click="login">Login</button>
       <ul>
-        <router-link to="/signup">
+        <router-link to="/landing">
             Sign up
         </router-link>
         
@@ -29,13 +30,10 @@
 </template>
 <script>
 export default {
-  methods: {
-    login() {
-      this.$router.push({name:'login'})
-    }
-  }
-}
+ 
+};
 </script>
+
 <style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

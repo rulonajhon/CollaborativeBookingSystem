@@ -3,20 +3,23 @@
 </script>
 
 <template>
-    <div class="img-box">
-        <img class="logo" src="../assets/uiclogo.png">
-    </div>
      <div class="contact-form">
+      <div class="container">
+        <h1>UIC Library Collaborative<br>Learning Room Booking System</h1>
+        <p>TIME TO FOCUS, TIME TO LEARN.</p>
+      </div>
+
                     <form class="form">
     
-   
+                  <div class="container">
     <div class="login">
-        <input type="text" v-model="email" placeholder="Student ID or UIC Email" />
-        <input type="password" v-model="password" placeholder="Password" />
-        <button v-on:click="login">Login</button>
-      <ul>
-        <li><a href="#">Sign Up</a></li>
+        <ul>
+        <router-link to="/picker"><button>
+            RESERVE NOW
+        </button></router-link>
+        
       </ul>
+    </div>
     </div>
     </form>
      </div>
@@ -40,15 +43,7 @@
 .logo {
     position: relative;
 }
-.contact-form{
-    background-color: rgb(255, 255, 255, 0.7);
-    padding-top: 125px ;
-    padding-bottom: 50px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border-radius: 10px;
 
-}
 body{
   padding: 0;
   margin: 0;
@@ -63,70 +58,32 @@ body{
 .logo{
     width: 200px
 }
-.login ul{
-  list-style-type: none;
-  
+.contact-form .container h1{
+  margin-top: -200px;
+  font-size: 60px;
+}
+.contact-form .container P{
+  font-size: 30px;
+  font-weight:600;
 }
 
-.login ul li a {
-  text-decoration: none;
-  color: rgba(233, 112, 130, 0.9);
-  position: relative;
-  left: -17px;
-  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; 
-}
 
-.login ul li a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: rgba(233, 112, 130, 0.9);
-  bottom: -5px;
-  left: 50%; 
-  transform: translateX(-50%) scaleX(0); 
-  transform-origin: center;
-  transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.login ul li a:hover {
-  color: rgba(233, 112, 130, 1);
-  transform: scale(1.1); 
-  font-weight: bold; 
-}
-
-.login ul li a:hover::before {
-  width: 100%;
-  transform: translateX(-50%) scaleX(1);
-}
-
-.login input{
-    text-align: center;
-    border: none;
-	border-bottom: 1px solid #D1D1D4;
-	background: none;
-	padding: 10px;
-    padding-bottom: 20px;
-	padding-left: 24px;
-	font-weight: 700;
-	width: 70%;
-	transition: .2s;
-}
 .login button{
     background: rgba(233, 112, 130, 0.9);
     text-align: center;
-    font-size: 14px;
+    font-size: 25px;
     margin-top: 30px;
     padding: 16px 20px;
-    border-radius: 26px;
-    border: 1px solid #D4D3E8;
+    border-radius: 50px;
     text-transform: uppercase;
     font-weight: 700;
     align-items: center;
     justify-content: center; /* Added to horizontally center the button */
-    width: 50%;
+    width: 300px;
+    height: 65px;
     color: #ffffff;
     cursor: pointer;
     transition: .2s;
+    
 }
 </style>

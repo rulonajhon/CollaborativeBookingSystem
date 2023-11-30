@@ -8,18 +8,13 @@
     </div>
      <div class="contact-form">
                     <form class="form">
-    
+                      <p>Choose an Account to Log in</p>
    
     <div class="login">
-        <input type="text" v-model="email" placeholder="Student ID or UIC Email" />
-        <input type="password" v-model="password" placeholder="Password" />
-        <button v-on:click="login">Login</button>
-      <ul>
-        <router-link to="/signup">
-            Sign up
-        </router-link>
-        
-      </ul>
+        <div class="btn1"><button v-on:click="login">Admin</button></div>
+      
+        <button v-on:click="login">Student</button>
+ 
     </div>
     </form>
      </div>
@@ -36,6 +31,7 @@ export default {
   }
 }
 </script>
+
 <style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -70,6 +66,14 @@ body{
 
 .logo{
     width: 200px
+}
+.form p{
+  font-size: 35px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 60px;
+  margin-top: -40px;
+  color: rgba(233, 112, 130, 0.9);
 }
 .login ul{
   list-style-type: none;
