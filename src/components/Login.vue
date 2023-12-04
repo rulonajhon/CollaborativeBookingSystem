@@ -13,7 +13,7 @@
     <div class="login">
         <input type="text" v-model="email" placeholder="Student ID or UIC Email" />
         <input type="password" v-model="password" placeholder="Password" />
-        <button v-on:click="login">Login</button>
+        <button v-on:click="home">Login</button>
       <ul>
         <router-link to="/signup">
             Sign up
@@ -32,6 +32,9 @@ export default {
   methods: {
     login() {
       this.$router.push({name:'login'})
+    },
+    home() {
+      this.$router.push({name:'home'})
     }
   }
 }

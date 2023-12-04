@@ -8,13 +8,18 @@
     </div>
      <div class="contact-form">
                     <form class="form">
-                      <p>Choose an Account to Log in</p>
+    
    
     <div class="login">
-        <div class="btn1"><button v-on:click="adminlogin">Admin</button></div>
-      
-        <button v-on:click="login">Student</button>
- 
+        <input type="text" v-model="email" placeholder="Admin Account" />
+        <input type="password" v-model="password" placeholder="Password" />
+        <button v-on:click="home">Login</button>
+      <ul>
+        <router-link to="/picker">
+            Back
+        </router-link>
+        
+      </ul>
     </div>
     </form>
      </div>
@@ -28,13 +33,12 @@ export default {
     login() {
       this.$router.push({name:'login'})
     },
-    adminlogin() {
-      this.$router.push({name:'adminlogin'})
-    },
+    home() {
+      this.$router.push({name:'home'})
+    }
   }
 }
 </script>
-
 <style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -69,14 +73,6 @@ body{
 
 .logo{
     width: 200px
-}
-.form p{
-  font-size: 35px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 60px;
-  margin-top: -40px;
-  color: rgba(233, 112, 130, 0.9);
 }
 .login ul{
   list-style-type: none;
