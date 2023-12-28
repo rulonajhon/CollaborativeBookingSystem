@@ -14,11 +14,23 @@
         <input type="text" v-model="email" placeholder="Student ID or UIC Email" />
         <input type="password" v-model="password" placeholder="Password" />
         <button v-on:click="home">Login</button>
+        <ul>
+      <router-link to="/signup" @click="showAlert">
+        Forgot Password?
+      </router-link>
+    </ul>
+
+    <!-- The Modal -->
+    <div v-if="showPrompt" class="modal">
+      <div class="modal-content">
+        <span class="close" @click="closePrompt">&times;</span>
+        <p>Go to the library to ask for new password</p>
+      </div>
+    </div>
       <ul>
         <router-link to="/signup">
-            Sign up
-        </router-link>
-        
+          Sign up
+        </router-link>      
       </ul>
     </div>
     </form>
@@ -35,7 +47,10 @@ export default {
     },
     home() {
       this.$router.push({name:'home'})
+    }, showAlert() {
+      window.alert("You need to go to the library.");
     }
+  
   }
 }
 </script>

@@ -48,7 +48,7 @@ export default {
 }
 .contact-form{
     background-color: rgb(255, 255, 255, 0.7);
-    padding-top: 125px ;
+    padding-top: 80px ;
     padding-bottom: 50px;
     padding-left: 5px;
     padding-right: 5px;

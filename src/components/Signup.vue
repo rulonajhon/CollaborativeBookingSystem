@@ -11,10 +11,10 @@
     
    
     <div class="login">
-        <input type="text" v-model="email" placeholder="Student ID" />
+        <input type="text" v-model="studentID" placeholder="Student ID" />
         <input type="text" v-model="email" placeholder="UIC Email" />
         <input type="password" v-model="password" placeholder="Password" />
-        <button v-on:click="login">Sign Up</button>
+        <button v-on:click="signup">Sign Up</button>
       <ul>
         <router-link to="/login">
             Log in
@@ -30,10 +30,36 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      studentID: '',
+      email: '',
+      password: '',
+    };
+  },
   methods: {
-    login() {
-      this.$router.push({name:'login'})
-    }
+    signup() {
+      const userData = {
+        studentID: this.studentID,
+        email: this.email,
+        password: this.password,
+      };
+      this.$router.push({name:'login'});
+    
+    const apiUrl = 'http://localhost:3000/api/register';
+    this.$axios.post(apiUrl, userData)
+        .then(response => {
+          console.log('User registered successfully:', response.data);
+          // Optionally, you can redirect the user to another page
+          this.$router.push('/login');
+        })
+        .catch(error => {
+          console.error('Error registering user:', error);
+          // Handle the error and provide feedback to the user
+        });
+  }
+  
+
   }
 }
 </script>
