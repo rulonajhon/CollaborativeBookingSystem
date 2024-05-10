@@ -37,6 +37,7 @@
       <div class="navigation">
         <div class="container">
           <div class="box">
+            <img class="logo" src="/src/assets/head-icon.png" />
           </div>
           <p1>Student User</p1>
         </div>
@@ -46,15 +47,50 @@
           <li><a href="#">Reserve</a></li>
         </ul>
         <div class="logout">
-        <a href="#">Logout</a>
+        <a href="login">Logout</a>
       </div>
       </div>
       <div class="history">
         <h1>History</h1>
+        <div class="box">
+          <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Student Number</th>
+      <th scope="col">Department</th>
+      <th scope="col">Course & Year</th>
+      <th scope="col">Time-In</th>
+      <th scope="col">Time-Out</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td scope="row">1</td>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>1 pm</td>
+    </tr>
+    <tr>
+      <td scope="row">2</td>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+      <td>1 pm</td>
+    </tr>
+    <tr>
+      <td scope="row">3</td>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+      <td>1 pm</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
       </div>
-      <div class="discussion">
+      <!-- <div class="discussion">
         <h1>Discussion Room</h1>
-      </div>
+      </div> -->
      
     </div>
     
@@ -64,7 +100,7 @@
 </template>
 <style scoped>
 .main-content{
-  padding-right: 770px;
+  padding-right: 970px;
   display: flex;
   flex-direction:column;
   align-items: stretch;
@@ -73,6 +109,11 @@
   left: 0;
   top: 0;
   bottom: 0;
+}
+.container p1 {
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
 }
 .main-content h1{
   font-size: 32px;
@@ -93,17 +134,21 @@ padding-left: 120px ;}
   left: 830px;
   top: 90px;
   bottom: 0;
-  border-top: 2px solid rgb(204, 213, 213);
+  border-top: 2px solid rgb(255, 255, 255);
   border-left: 2px solid rgb(204, 213, 213);
 }
 .history h1{
-  padding: 30px;
+  padding: -120px;
+  padding-left: 40px;
   color: rgb(205, 205, 205);
- font-size: 30px;
+ font-size: 50px;
+text-decoration: none;
+align-self: flex-start;
 
+ 
 }
 .history{
-  padding-right: 500px;
+  padding-right: 1400px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -115,6 +160,35 @@ padding-left: 120px ;}
   border-top: 2px solid rgb(204, 213, 213);
   border-right: 2px solid rgb(204, 213, 213);
 }
+.history .box {
+
+  width: 1400px;
+  height: 570px;
+  padding: 70px;
+}
+.history .box {
+  padding: 20px; /* Add padding for spacing */
+}
+
+.history .table {
+  width: 100%; /* Set the width to fill its container */
+  border-collapse: collapse; /* Collapse borders */
+}
+
+.history .table th,
+.history .table td {
+  border-bottom: 2px solid #ddd; /* Add border */
+  padding: 15px; /* Add padding */
+  color: black;
+  text-align: left; /* Align text to the left */
+}
+
+.history .table th {
+  background-color: #f1f1f1; /* Set background color for header */
+}
+
+
+
 .navigation .logout a{
 display: flex;
 justify-content: flex-start;
@@ -146,13 +220,19 @@ display: flex;
 }
 
 .container .box {
-    background-color: aqua;
-    padding-top: 100px;
-
+   
+  
    display: flex;
    justify-content: flex-start;
    border-radius: 50px;
+
 }
+.container .box img{
+  height: 200px;
+  border-radius: 125px;
+
+}
+
 
 nav ul {
   list-style-type: none;

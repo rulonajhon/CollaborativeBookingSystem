@@ -1,44 +1,56 @@
-<script setup>
-
-</script>
-
 <template>
-    <div class="img-box">
-        <img class="logo" src="../assets/uiclogo.png" />
-    </div>
-     <div class="contact-form">
-                    <form class="form">
-    
-   
-    <div class="login">
-        <input type="text" v-model="email" placeholder="Admin Account" />
+  <div class="img-box">
+    <img class="logo" src="../assets/uiclogo.png" />
+  </div>
+  <div class="contact-form">
+    <form class="form">
+      <div class="login">
+        <input type="text" v-model="username" placeholder="Admin Account" />
         <input type="password" v-model="password" placeholder="Password" />
-        <button v-on:click="home">Login</button>
-      <ul>
-        <router-link to="/picker">
+        <button @click.prevent="login">Login</button>
+        <ul>
+          <router-link to="/picker">
             Back
-        </router-link>
-        
-      </ul>
-    </div>
+          </router-link>
+        </ul>
+      </div>
     </form>
-     </div>
-    
-
-    
+  </div>
 </template>
+
 <script>
+import axios from 'axios';
+
 export default {
+  data() {
+    return {
+      username: '',
+      password: ''
+    };
+  },
   methods: {
-    login() {
-      this.$router.push({name:'login'})
-    },
-    home() {
-      this.$router.push({name:'home'})
+    async login() {
+      try {
+        const response = await axios.post('http://127.0.0.1:8000/admin/admin/login', {
+          username: this.username,
+          password: this.password
+        });
+        // Assuming the response contains a success message upon successful login
+        alert(response.data.message);
+        // Redirect the user to the home page after successful login
+        this.$router.push({ name: 'home' });
+      } catch (error) {
+        // Handle login errors
+        alert('Invalid username or password');
+        console.error('Login error:', error);
+      }
     }
   }
-}
+};
 </script>
+
+
+
 <style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
