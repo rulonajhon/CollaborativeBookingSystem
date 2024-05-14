@@ -1,12 +1,5 @@
-
 <template>
- <head>
-  <div class="header">
-    <title>Library Room Booking System</title>
-  </div>
-  
-  <!-- Add Vue.js CDN and any required stylesheets here -->
-</head>
+  <div>
     <!-- Main content area for room availability -->
     <div class="main-content">
       <h1>Library Discussion Room Booking System</h1>
@@ -24,155 +17,94 @@
         </div>
       </div>
     </div>
-<body>
-  <div id="app">
+
     <!-- Sidebar for user navigation -->
     <div class="sidebar">
+      <!-- User profile image and info -->
       <div class="user-profile">
-        <!-- User profile image and info -->
+        <!-- User profile image and info go here -->
       </div>
       <div class="navigation">
         <div class="container">
           <div class="box">
             <img class="logo" src="/src/assets/head-icon.png" />
           </div>
-          <p1>Student User</p1>
+          <p>Student User</p>
         </div>
         <ul>
           <li><a href="studenthome">Schedule</a></li>
           <li><a href="reservehome">Reserve</a></li>
         </ul>
         <div class="logout">
-        <a href="login">Logout</a>
-      </div>
+          <a href="login">Logout</a>
+        </div>
       </div>
       <div class="history">
         <div class="box">
           <table class="table">
-            <div class="home-container"
-            ><div class="home-student-scheduleempty"
-            ><div class="home-reservationgreybg"
-              ><div class="home-reservationsched"
-              ><span class="home-text"><span>Schedule</span></span></div
-              ></div
-            ><div class="home-calendar-body"
-              ><div class="home-calendar-dayeader"
-              ><div class="home-freespace"></div
-              ><div class="home-sunday"
-                ><span class="home-text02"><span>Sunday</span></span></div
-              ><div class="home-monday"
-                ><span class="home-text04"><span>Monday</span></span></div
-              ><div class="home-tuesday"
-                ><span class="home-text06"><span>Tuesday</span></span></div
-              ><div class="home-wednesday"
-                ><span class="home-text08"><span>Wednesday</span></span></div
-              ><div class="home-thursday"
-                ><span class="home-text10"><span>Thursday</span></span></div
-              ><div class="home-friday"
-                ><span class="home-text12"><span>Friday</span></span></div
-              ><div class="home-saturday"
-                ><span class="home-text14"><span>Saturday</span></span></div
-              ></div
-              ><div class="home-sevenrow"
-              ><div class="home-one"
-                ><span class="home-text16"><span>7:00 AM</span></span></div
-              ><div class="home-two"></div><div class="home-three"></div
-              ><div class="home-four"></div><div class="home-five"></div
-              ><div class="home-six"></div><div class="home-seven"></div
-              ><div class="home-eight"></div></div
-              ><div class="home-eightrow"
-              ><div class="home-one01"
-                ><span class="home-text18"><span>8:00 AM</span></span></div
-              ><div class="home-two01"></div><div class="home-three01"></div
-              ><div class="home-four01"></div><div class="home-five01"></div
-              ><div class="home-six01"></div><div class="home-seven01"></div
-              ><div class="home-eight01"></div></div
-              ><div class="home-ninerow"
-              ><div class="home-one02"
-                ><span class="home-text20"><span>9:00 AM</span></span></div
-              ><div class="home-two02"></div><div class="home-three02"></div
-              ><div class="home-four02"></div><div class="home-five02"></div
-              ><div class="home-six02"></div><div class="home-seven02"></div
-              ><div class="home-eight02"></div></div
-              ><div class="home-tenrow"
-              ><div class="home-one03"
-                ><span class="home-text22"><span>10:00 AM</span></span></div
-              ><div class="home-two03"></div><div class="home-three03"></div
-              ><div class="home-four03"></div><div class="home-five03"></div
-              ><div class="home-six03"></div><div class="home-seven03"></div
-              ><div class="home-eight03"></div></div
-              ><div class="home-elevenrow"
-              ><div class="home-one04"
-                ><span class="home-text24"><span>11:00 AM</span></span></div
-              ><div class="home-two04"></div><div class="home-three04"></div
-              ><div class="home-four04"></div><div class="home-five04"></div
-              ><div class="home-six04"></div><div class="home-seven04"></div
-              ><div class="home-eight04"></div></div
-              ><div class="home-twelverow"
-              ><div class="home-one05"
-                ><span class="home-text26"><span>12:00 PM</span></span></div
-              ><div class="home-two05"></div><div class="home-three05"></div
-              ><div class="home-four05"></div><div class="home-five05"></div
-              ><div class="home-six05"></div><div class="home-seven05"></div
-              ><div class="home-eight05"></div></div
-              ><div class="home-onerow"
-              ><div class="home-one06"
-                ><span class="home-text28"><span>1:00 PM</span></span></div
-              ><div class="home-two06"></div><div class="home-three06"></div
-              ><div class="home-four06"></div><div class="home-five06"></div
-              ><div class="home-six06"></div><div class="home-seven06"></div
-              ><div class="home-eight06"></div></div
-              ><div class="home-tworow"
-              ><div class="home-one07"
-                ><span class="home-text30"><span>2:00 PM</span></span></div
-              ><div class="home-two07"></div><div class="home-three07"></div
-              ><div class="home-four07"></div><div class="home-five07"></div
-              ><div class="home-six07"></div><div class="home-seven07"></div
-              ><div class="home-eight07"></div></div
-              ><div class="home-threerow"
-              ><div class="home-one08"
-                ><span class="home-text32"><span>3:00 PM</span></span></div
-              ><div class="home-two08"></div><div class="home-three08"></div
-              ><div class="home-four08"></div><div class="home-five08"></div
-              ><div class="home-six08"></div><div class="home-seven08"></div
-              ><div class="home-eight08"></div></div
-              ><div class="home-fourrow"
-              ><div class="home-one09"
-                ><span class="home-text34"><span>4:00 PM</span></span></div
-              ><div class="home-two09"></div><div class="home-three09"></div
-              ><div class="home-four09"></div><div class="home-five09"></div
-              ><div class="home-six09"></div><div class="home-seven09"></div
-              ><div class="home-eight09"></div></div
-              ><div class="home-fiverow"
-              ><div class="home-one10"
-                ><span class="home-text36"><span>5:00 PM</span></span></div
-              ><div class="home-two10"></div><div class="home-three10"></div
-              ><div class="home-four10"></div><div class="home-five10"></div
-              ><div class="home-six10"></div><div class="home-seven10"></div
-              ><div class="home-eight10"></div></div></div
-            ><div class="home-nav-bar-top"
-              ><span class="home-text38"
-              ><span class="home-text39">UIC</span
-              ><span> <span v-html="rawq8lh"></span></span
-              ><span class="home-text41"
-                >COLLABORATIVE LEARNING ROOM BOOKING SYSTEM</span
-              ></span
-              ></div
-            ></div
-            ></div>
-</table>
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Student ID</th>
+                <th>Room Choice</th>
+                <th>Time In</th>
+                <th>Time Out</th>
+                <th>Companions</th>
+                <th>Student Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="booking in week" :key="booking.BookingID">
+                <td>{{ booking.BookingID }}</td>
+                <td>{{ booking.StudentID }}</td>
+                <td>{{ booking.RoomChoice }}</td>
+                <td>{{ booking.TimeIn }}</td>
+                <td>{{ booking.TimeOut }}</td>
+                <td>{{ booking.Companions }}</td>
+                <td>{{ booking.StudentName }}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-      <!-- <div class="discussion">
-        <h1>Discussion Room</h1>
-      </div> -->
-     
     </div>
-    
   </div>
-
-</body> 
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      week: [], // Weekly bookings data will be stored here
+      // Define weeklyBookings array to store fetched data
+      weeklyBookings: [], 
+    };
+  },
+  mounted() {
+    // Fetch weekly bookings data and update 'week' property
+    this.fetchWeeklyBookings();
+  },
+  methods: {
+    async fetchWeeklyBookings() {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/bookings/bookings/weekly_bookings');
+        const data = await response.json();
+        
+        console.log('Fetched weekly bookings data:', data); // Log the fetched data
+
+        // Set the fetched data to 'week' property
+        this.week = data;
+
+      } catch (error) {
+        console.error('Error fetching weekly bookings:', error);
+      }
+    },
+  },
+};
+</script>
+
+
+
 <style scoped>
 .main-content{
   padding-right: 970px;

@@ -1,19 +1,19 @@
 <template>
 	<div class="navigation">
-        <div class="container">
-          <div class="box">
-            <img class="logo" src="/src/assets/head-icon.png" />
-          </div>
-          <p1>Student User</p1>
-        </div>
-        <ul>
-          <li><a href="studenthome">Schedule</a></li>
-          <li><a href="reservehome">Reserve</a></li>
-        </ul>
-        <div class="logout">
-        <a href="login">Logout</a>
-      </div>
-      </div>
+	  <div class="container">
+		<div class="box">
+		  <img class="logo" src="/src/assets/head-icon.png" />
+		</div>
+		<p1>Student User</p1>
+	  </div>
+	  <ul>
+		<li><a href="studenthome">Schedule</a></li>
+		<li><a href="reservehome">Reserve</a></li>
+	  </ul>
+	  <div class="logout">
+		<a href="login">Logout</a>
+	  </div>
+	</div>
 	<div class="booking-form">
 	  <h2>Create Booking</h2>
 	  <form @submit.prevent="createBooking">
@@ -52,62 +52,66 @@
 	data() {
 	  return {
 		username: '',
-		roomChoice: '', // Changed to an empty string
+		roomChoice: '',
 		timeIn: '',
 		timeOut: '',
 		companions: ''
 	  };
 	},
 	methods: {
-	  async createBooking() {
-		try {
-		  // Parse and format timeIn and timeOut
-		  const formattedTimeIn = this.formatDateTime(this.timeIn);
-		  const formattedTimeOut = this.formatDateTime(this.timeOut);
-  
-		  // Send the formatted data to the backend
-		  const response = await axios.post('http://127.0.0.1:8000/bookings/bookings/create_booking', null, {
-			params: {
-			  username: this.username,
-			  room_choice: this.roomChoice, // Use the selected room choice
-			  time_in: formattedTimeIn,
-			  time_out: formattedTimeOut,
-			  companions: this.companions
-			}
-		  });
-  
-		  console.log('Booking created successfully:', response.data);
-		  // Reset form fields after successful booking creation
-		  this.username = '';
-		  this.roomChoice = '';
-		  this.timeIn = '';
-		  this.timeOut = '';
-		  this.companions = '';
-		} catch (error) {
-		  console.error('Error creating booking:', error.response.data);
-		  // Handle error
-		}
-	  },
-	  formatDateTime(dateTime) {
-		// Parse dateTime string to Date object
-		const parsedDate = new Date(dateTime);
-  
-		// Format the Date object to 'YYYY-MM-DD HH:MM:SS'
-		const formattedDateTime = parsedDate.toISOString().slice(0, 19).replace('T', ' ');
-  
-		return formattedDateTime;
-	  }
+		async createBooking() {
+  try {
+    // Parse and format timeIn and timeOut
+    const formattedTimeIn = this.formatDateTime(this.timeIn);
+    const formattedTimeOut = this.formatDateTime(this.timeOut);
+
+    // Calculate the duration between timeIn and timeOut
+    const durationInMinutes = (new Date(formattedTimeOut) - new Date(formattedTimeIn)) / (1000 * 60);
+
+    // Check if the duration exceeds 2 hours
+    if (durationInMinutes > 120) {
+      throw new Error('Booking duration cannot exceed 2 hours.');
+    }
+
+    // Send the formatted data to the backend
+    const response = await axios.post('http://127.0.0.1:8000/bookings/bookings/create_booking', null, {
+      params: {
+        username: this.username,
+        room_choice: this.roomChoice, // Use the selected room choice
+        time_in: formattedTimeIn,
+        time_out: formattedTimeOut,
+        companions: this.companions
+      }
+    });
+
+    console.log('Booking created successfully:', response.data);
+    // Reset form fields after successful booking creation
+    this.username = '';
+    this.roomChoice = '';
+    this.timeIn = '';
+    this.timeOut = '';
+    this.companions = '';
+
+    // Display success alert
+    alert('Booking created successfully!');
+  } catch (error) {
+    console.error('Error creating booking:', error.message);
+    // Handle error
+    if (error.response && error.response.status === 400 && error.response.data === "Double booking detected.") {
+      // Display alert for double booking
+      alert('The room is already booked for the selected time. Please choose another time slot.');
+    } else {
+      // Display general error alert
+      alert('Error creating booking: ' + error.message);
+    }
+  }
+}
+
 	}
   }
   </script>
   
   
-  
-
-  
-  
-  
-
 <style scoped>
 .main-content{
   padding-right: 970px;
